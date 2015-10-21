@@ -16,5 +16,5 @@ let settings = { url: 'https://api.github.com/users/microsoft/repos?sort=updated
 $.ajax(settings).then((data) => {
 	let content = <div>{data.map((entry, i) => <RepoDisplay key={i} {...entry} url={entry.html_url} />) }</div>;
 	let target = document.getElementById('output');
-	React.render(content, target);
+	ReactDOM.render(content, target);
 });
